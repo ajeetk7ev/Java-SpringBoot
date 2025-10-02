@@ -35,6 +35,12 @@ class Test<T, U>
 
 
 public class Generics_Main {
+
+    //Creating a generics methods
+    static <T> void genericDisplay(T ele){
+         System.out.println(ele.getClass().getName()
+                           + " = " + ele);
+    }
     public static void main(String[] args) {
 
         //Integer
@@ -43,13 +49,22 @@ public class Generics_Main {
         // System.out.println("PRINTING BOX VALUE : "+intBox.get());
 
         //String
-        Box<String> intBox = new Box<>();
-        intBox.set("AALo PARATHA");
-        System.out.println("PRINTING BOX VALUE : "+intBox.get());
+        // Box<String> intBox = new Box<>();
+        // intBox.set("AALo PARATHA");
+        // System.out.println("PRINTING BOX VALUE : "+intBox.get());
 
-        Test <String, Integer> obj =
-            new Test<String, Integer>("SPRINGBOOT", 15);
+        // Test <String, Integer> obj =
+        //     new Test<String, Integer>("SPRINGBOOT", 15);
 
-        obj.print();
+        // obj.print();
+
+        // Calling generic method with Integer argument
+        genericDisplay(11);
+
+        // Calling generic method with String argument
+        genericDisplay("GeeksForGeeks");
+
+        // Calling generic method with double argument
+        genericDisplay(1.0);
     }
 }
